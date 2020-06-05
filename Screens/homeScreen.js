@@ -3,12 +3,11 @@ import { Text, View ,Button } from 'react-native';
 
 export default class registerScreen extends React.Component{
 
-    constructor(props){
-        super(props)
-        console.log(props.user)
-    }
+
 
     render(){
+
+        console.log(this.props.user);
 
         return(
             <View>

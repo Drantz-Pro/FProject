@@ -3,18 +3,23 @@ import {Text, View , Button, TextInput, StyleSheet,TouchableHighlight} from 'rea
 
 export default class loginScreen extends Component{
 
-    state = {
-        username: '',
-        password:'',
+
+    constructor(props){
+        super(props)
+        this.state={
+            username:'',
+            password:''
+        }
     }
 
-    usernameMount = (user) => {
+  /*  usernameMount = (user) => {
         this.setState({username : user})
     }
     passwordMount = (pass) => {
         this.setState({password : pass})
     }
-
+*/
+  //  {user:this.state.username, pass:this.state.password}
 
     render(){
 
@@ -30,16 +35,16 @@ export default class loginScreen extends Component{
                 <View style={style.container} >
                     <TextInput style={style.inputl}
                       placeholder='Username'
-                     onChangeText={this.usernameMount}
+                     onChangeText={user => this.setState({username: user})} value={this.state.username}
                     />
 
                     <TextInput style={style.inputl}
                         placeholder='Password'
-                        onChangeText= {this.passwordMount}
+                        onChangeText= {pass => this.setState({password: pass})} value={this.state.password}
                     />
 
                     <TouchableHighlight>
-                        <Text style={style.buton} onPress={()=>{this.props.navigation.navigate('Home',{user:this.state.username, pass:this.state.password})}} >
+                        <Text style={style.buton} onPress={()=>{this.props.navigation.navigate('Homes',{user:this.state.username, pass:this.state.password})}} >
                             Login
                         </Text>
                     </TouchableHighlight>

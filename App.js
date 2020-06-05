@@ -10,6 +10,8 @@ import registerScreen from './Screens/registerScreen';
 import homeScreen from './Screens/homeScreen';
 import detailScreen from './Screens/detailScreen';
 
+import homes from './Routes/homeDetails'
+
 /*const authStack = createStackNavigator({
   login:{
     screen: loginScreen,
@@ -61,15 +63,13 @@ export default class app extends React.Component{
 
         <Stack.Screen name="Login" component={loginScreen} />
         <Stack.Screen name="Register" component={registerScreen} />
-        <Stack.Screen name='Home' component={homeScreen}initialParams={{ user: '',pass:'' }} />
-        <Stack.Screen name='Details' component={detailScreen} />
+        <Stack.Screen name="Homes" component={homeScreen} initialParams={{ user: '',pass:'' }} />
 
        </Stack.Navigator>
 
     </NavigationContainer>
     );
   }
-
 
 }
 
@@ -79,3 +79,5 @@ export default class app extends React.Component{
      // <Stack.Screen name = 'home' component={homeScreen} />
      // <Stack.Screen name= 'details' component={detailScreen} />
    // </Stackk.Navigator>
+  // <Stack.Screen name='Home' component={homeScreen}initialParams={{ user: '',pass:'' }} />
+//   <Stack.Screen name='Details' component={detailScreen} />
